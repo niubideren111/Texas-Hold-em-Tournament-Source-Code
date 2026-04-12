@@ -1,6 +1,18 @@
 # ♠️ Texas Hold'em Tournament System | Poker Tournament Source Code | 德州锦标赛源码 | 德州撲克錦標賽系統
+🔥 Used in real tournament-style poker platforms
+🔥 Professional Poker Tournament System (MTT / Sit & Go / Rebuy)  
+🔥 Core revenue module for online poker platforms  
 
-🔥 Professional poker tournament system (MTT / Sit & Go)
+🏆 Real tournament lifecycle: Register → Play → Eliminate → Final Table → Prize  
+
+💰 Designed to maximize player retention & platform profit  
+🔥 专业扑克锦标赛系统（MTT / Sit & Go / 重购机制）  
+🔥 在线扑克平台核心盈利模块  
+
+🏆 完整赛事流程：报名 → 开赛 → 淘汰 → 决赛桌 → 奖励发放  
+
+💰 专为提升玩家留存与平台收益而设计  
+
 🔥 支持锦标赛 / 排名 / 奖池机制
 🔥 支援錦標賽 / 排名 / 獎池系統
 
@@ -114,6 +126,18 @@ This project is a **Texas Hold'em Tournament System**, designed for building pro
 
 
 ---
+## 🔄 Tournament Flow | 比赛流程 | 比賽流程
+
+1. 📝 Player registration（报名）  
+2. 🎮 Tournament start（开赛）  
+3. ⏱ Blind level increase（盲注增长）  
+4. ❌ Player elimination（淘汰）  
+5. 🏆 Final table（决赛桌）  
+6. 💰 Prize distribution（奖励发放）  
+
+👉 Complete tournament lifecycle simulation  
+👉 完整赛事流程模拟  
+👉 完整賽事流程模擬  
 
 ## 🔗 Related Projects | 相关项目 | 相關項目
 
@@ -126,7 +150,25 @@ https://github.com/niubideren111/Texas-Holdem-Game-Source-Code
 👉 Texas Hold'em AI System
 https://github.com/niubideren111/Texas-Holdem-AI-System
 
----
+## ⚙️ Advanced Tournament Features | 高级玩法 | 高級玩法
+
+- 🔁 Rebuy / Add-on（重购机制）  
+- ⏳ Late registration（延迟报名）  
+- 🎯 Dynamic blind structure（动态盲注）  
+- 🏆 Final table optimization（决赛桌优化）  
+
+👉 Matches real-world poker tournaments  
+👉 接近真实赛事机制  
+👉 接近真實賽事機制  
+## 🔥 Player Engagement | 玩家体验 | 玩家體驗
+
+- 📈 Competitive ranking pressure（排名竞争）  
+- 💥 High-stakes gameplay（高风险对局）  
+- 🎯 Tournament progression excitement（晋级刺激）  
+
+👉 Designed for high retention gameplay  
+👉 专为高留存设计  
+👉 專為高留存設計  
 
 ## 📞 Contact | 联系方式 | 聯絡方式
 
