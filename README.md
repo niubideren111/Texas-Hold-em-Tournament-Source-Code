@@ -112,7 +112,12 @@ This project is a **Texas Hold'em Tournament System**, designed for building pro
 
 👉 Faster than building from scratch
 
----
+## 📞 Contact | 联系方式 | 聯絡方式
+
+* Telegram: @fox_lovemyself
+* Email:zyue02561@gmail.com
+
+💬 Fast response within 24h
 
 ## 📸 Tournament Preview | 比赛展示 | 比賽展示
 
@@ -171,14 +176,7 @@ https://github.com/niubideren111/Texas-Holdem-AI-System
 👉 专为高留存设计  
 👉 專為高留存設計  
 
-## 📞 Contact | 联系方式 | 聯絡方式
 
-* Telegram: @fox_lovemyself
-
-
-💬 Fast response within 24h
-
----
 
 ## ⚠️ Disclaimer | 声明 | 聲明
 
