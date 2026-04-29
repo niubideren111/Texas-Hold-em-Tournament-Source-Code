@@ -1,42 +1,48 @@
+
 #-----------------------------------------------------------------------
-APP         := XGame
-GAMEID      := 22013900
 
-TARGET_NAME := lib$(GAMEID)
-TARGET      := $(TARGET_NAME).so 
-
-TARSFILE_DIR  := /home/tarsproto/$(APP)/$(TARGET)/
-CONFIG        := source/config/lib22013900.cfg
+APP           := XGame
+TARGET        := RouterServer
+CONFIG        := 
 STRIP_FLAG    := N
-LFLAGS        := #-Xlinker --unresolved-symbols=ignore-in-shared-libs
+TARS2CPP_FLAG := 
+CFLAGS        += -lm -lssl
+CXXFLAGS      += -lm -lssl
 
-CFLAGS     := -std=c++11 -fPIC -D__GAMEID__=$(GAMEID)
-CXXFLAGS   := -std=c++11 -fPIC -D__GAMEID__=$(GAMEID)
-
-INCLUDE   += -I/home/tarsproto/$(APP)
-LIB       += -L/home/tarsproto/$(APP)
-
-INCLUDE   += -I./submod -I./submod/xtime/source -I./source -I./source/common
-LIB       +=
-
-INCLUDE   += -I/usr/local/cpp_modules/wbl/include
+INCLUDE   += -I. -I/usr/local/cpp_modules/wbl/include
 LIB       += -L/usr/local/cpp_modules/wbl/lib -lwbl
 
 INCLUDE   += -I/usr/local/cpp_modules/protobuf/include
 LIB       += -L/usr/local/cpp_modules/protobuf/lib -lprotobuf
 
-INCLUDE   += -I/home/tarsproto/XGame/protocols/ 
-LIB       += -L/home/tarsproto/XGame/protocols/ -lprotocols
+INCLUDE   += -I./external
+LIB       += 
 
-INCLUDE   += -I/usr/local/tars/cpp/include/
-LIB       += -L/usr/local/tars/cpp/lib -ltarsutil -ltarsservant -ltarsparse
+LIB	      += -lcrypto
+
+#
+LOCAL_SRC += external/AsyncLoginCallback.cpp \
+		external/AsyncLogoutCallback.cpp \
+		external/AsyncGetUserCallback.cpp \
+		external/AsyncUserStateCallback.cpp
 
 #-----------------------------------------------------------------------
-FILTER_OUT_DIRS := .git .svn  build client
-#-----------------------------------------------------------------------
-
+include /home/tarsproto/XGame/OrderServer/OrderServer.mk
+include /home/tarsproto/XGame/SocialServer/SocialServer.mk
+include /home/tarsproto/XGame/Comm/Comm.mk
 include /home/tarsproto/XGame/protocols/protocols.mk
-include submod/makefile_base/base.mk
+include /home/tarsproto/XGame/LoginServer/LoginServer.mk
+include /home/tarsproto/XGame/ConfigServer/ConfigServer.mk
+include /home/tarsproto/XGame/RoomServer/RoomServer.mk
+include /home/tarsproto/XGame/HallServer/HallServer.mk
+include /home/tarsproto/XGame/GlobalServer/GlobalServer.mk
+include /home/tarsproto/XGame/PushServer/PushServer.mk
+include /home/tarsproto/XGame/ActivityServer/ActivityServer.mk
+include /home/tarsproto/XGame/GameRecordServer/GameRecordServer.mk
+include /home/tarsproto/XGame/PushServer/PushServer.mk
+include /usr/local/tars/cpp/makefile/makefile.tars
 
-100:
-	sshpass -p 'awzs2022' scp ./build/lib22013900.so root@10.10.10.100:/data/app/so
+#-----------------------------------------------------------------------
+
+xgame:
+	sshpass -p 'root123' scp ./RouterServer  root@10.10.10.82:/usr/local/app/tars/tarsnode/data/XPassport.RouterServer/bin/
