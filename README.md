@@ -1,4 +1,4 @@
-# ♠️ Texas Hold'em Tournament System | Poker Tournament Source Code | 德州源码|德州竞技赛|德州锦标赛源码 |德州扑克| 德州撲克錦標賽系統|德州赛事
+# ♠️ Texas Hold'em Tournament System | Poker Tournament Source Code | 德州源码|德州竞技赛|德州锦标赛源码 |德州扑克| 德州撲克錦標賽系統|德州赛事|德州俱乐部
 🔥 已在真實撲克錦標賽平台中使用（可直接用於生產環境）
 🔥 Used in real tournament-style poker platforms
 🔥 Professional Poker Tournament System (MTT / Sit & Go / Rebuy)  
