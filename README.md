@@ -1,4 +1,4 @@
-# ♠️ Texas Hold'em Tournament System | Poker Tournament Source Code | 德州源码|德州竞技赛|德州锦标赛源码 |德州扑克| 德州撲克錦標賽系統|德州赛事|德州俱乐部
+# ♠️德州锦标赛源码｜赛事大厅（德州扑克）| Texas Hold'em Tournament System | Poker Tournament Source Code 
 🔥 已在真實撲克錦標賽平台中使用（可直接用於生產環境）
 🔥 Used in real tournament-style poker platforms
 🔥 Professional Poker Tournament System (MTT / Sit & Go / Rebuy)  
@@ -51,9 +51,6 @@ This project is a **Texas Hold'em Tournament System**, designed for building pro
 * 📊 Leaderboard ranking（排行榜系统）
 * 🎯 Sit & Go / MTT modes（多种赛事模式）
 
-👉 Real tournament gameplay structure
-👉 真实锦标赛玩法结构
-👉 真實錦標賽玩法結構
 
 ---
 
@@ -121,15 +118,10 @@ This project is a **Texas Hold'em Tournament System**, designed for building pro
 
 ## 📸 Tournament Preview | 比赛展示 | 比賽展示
 
-![DE07B42F7315FB5A02D68DBA3FB9E954](https://github.com/user-attachments/assets/8ce33bec-3240-4ea5-bcf2-11f1dfa53b71)
-![57AD8C3F3D1FEDBD8A22209F721F219C](https://github.com/user-attachments/assets/69788c1e-fb20-4276-bc82-ff1a4ed653dc)
-![45F25321DE41CEEDEC3CF7183FD3C675](https://github.com/user-attachments/assets/d6b6e1db-2e6e-4be9-ab0d-802dee960884)
-![40A0D8F11618D18FC71051F2B6AB23B5](https://github.com/user-attachments/assets/ffe0c1b4-ee46-4f8e-a64b-3d861551b67c)
-![9A04AC9A3B24114A5FB08ECB6732DD39](https://github.com/user-attachments/assets/bf203898-8fad-4ec4-bf31-b2fda91c80b6)
-![5D92E1A5440929764F856722759CB898](https://github.com/user-attachments/assets/6067d4c9-588e-416b-b131-60f2a72b9181)
-![3C28D20DD94135BAA0E3E6245FB541B8](https://github.com/user-attachments/assets/c1a56298-1288-4996-9a5d-c05fa7c3d7a1)
-![E321CA2122D1DFD5E409E43D2210225A](https://github.com/user-attachments/assets/c5b8b8bb-0359-4c28-bd3c-d1df8e86f702)
-
+![德州赛事项目列表页面](docs/assets/seo/texas-hold-em-tournament-source-code-01.jpg)
+![德州锦标赛品牌赛事展示](docs/assets/seo/texas-hold-em-tournament-source-code-02.jpg)
+![德州锦标赛相关列表与入口](docs/assets/seo/texas-hold-em-tournament-source-code-03.jpg)
+![德州赛事产品首页展示](docs/assets/seo/texas-hold-em-tournament-source-code-04.jpg)
 
 ---
 ## 🔄 Tournament Flow | 比赛流程 | 比賽流程
@@ -145,16 +137,6 @@ This project is a **Texas Hold'em Tournament System**, designed for building pro
 👉 完整赛事流程模拟  
 👉 完整賽事流程模擬  
 
-## 🔗 Related Projects | 相关项目 | 相關項目
-
-👉 Poker Club System
-https://github.com/niubideren111/Poker-Club
-
-👉 Texas Hold'em Game Source Code
-https://github.com/niubideren111/Texas-Holdem-Game-Source-Code
-
-👉 Texas Hold'em AI System
-https://github.com/niubideren111/Texas-Holdem-AI-System
 
 ## ⚙️ Advanced Tournament Features | 高级玩法 | 高級玩法
 
@@ -176,6 +158,31 @@ https://github.com/niubideren111/Texas-Holdem-AI-System
 👉 专为高留存设计  
 👉 專為高留存設計  
 
+## 常见问题
+
+### SNG 与 MTT 关注点有什么不同？
+SNG 重点是单桌人数与开赛条件，MTT 还涉及多桌调度、淘汰和合桌；本仓库提供赛事产品与流程资料。
+
+### 哪个文件用于理解服务端入口？
+先阅读 create_game.cpp 与 GameTcp.tars，再对照玩法时序图和服务脚本。
+
+ README 将**产品展示、公开源码和项目交付**分开描述。公开仓库中没有出现的客户端、服务器、数据库、后台、支付或部署能力，不在此处作出已实现承诺；需要验收时，应以具体文件、版本和运行记录为准。
+
+## 相关项目
+
+- [dezhou-poker-club-source-code](https://github.com/niubideren111/dezhou-poker-club-source-code)
+- [Texas-Holdem-Game-Source-Code](https://github.com/niubideren111/Texas-Holdem-Game-Source-Code)
+
+## 项目咨询
+
+- Telegram：[fox_lovemyself](https://t.me/fox_lovemyself)
+- GitHub：[德州锦标赛源码](https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code)
+
+
+
+## 许可
+
+请按仓库现有 [LICENSE](LICENSE) 与 [License.md](License.md) 使用公开文件。商业工程、美术资源和完整部署资料的授权范围以书面约定为准。
 
 
 ## ⚠️ Disclaimer | 声明 | 聲明
