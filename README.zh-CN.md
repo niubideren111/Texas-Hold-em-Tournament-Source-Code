@@ -1,4 +1,4 @@
-# 德州锦标赛源码｜赛事大厅、Tars 协议与玩法流程
+# 德州锦标赛源码（德州赛事）｜赛事大厅、Tars 协议与玩法流程
 
 [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [产品页面](https://niubideren111.github.io/Texas-Hold-em-Tournament-Source-Code/zh-cn/)
 
@@ -75,7 +75,7 @@ SNG 重点是单桌人数与开赛条件，MTT 还涉及多桌调度、淘汰和
 
 ## 资料范围与许可
 
-公开仓库包含 C++ 片段、协议和配置资料、流程图与比赛截图；完整报名、开赛、淘汰及结算链路需在完整工程中验收。 公开内容以实际文件、依赖和许可为准，不承诺搜索排名、直接上线或固定性能结果。
+公开仓库包含 C++ 源码、协议和配置资料、流程图与比赛截图；完整报名、开赛、淘汰及结算链路需在完整工程中验收。 公开内容以实际文件、依赖和许可为准，不承诺搜索排名、直接上线或固定性能结果。
 
 - Telegram: [@fox_lovemyself](https://t.me/fox_lovemyself)
 - GitHub: [Texas-Hold-em-Tournament-Source-Code](https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code)
