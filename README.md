@@ -1,14 +1,12 @@
-# ♠️德州锦标赛源码｜赛事大厅（德州扑克）| Texas Hold'em Tournament System | Poker Tournament Source Code 
-🔥 已在真實撲克錦標賽平台中使用（可直接用於生產環境）
-🔥 Used in real tournament-style poker platforms
-🔥 Professional Poker Tournament System (MTT / Sit & Go / Rebuy)  
-🔥 Core revenue module for online poker platforms  
+# 德州锦标赛源码｜赛事大厅（德州扑克）| Texas Hold'em Tournament System | Poker Tournament Source Code 
 
-🏆 Real tournament lifecycle: Register → Play → Eliminate → Final Table → Prize  
+> 中文简体 · 中文繁體 · English 多语言产品与源码资料
 
-💰 Designed to maximize player retention & platform profit  
-🔥 专业扑克锦标赛系统（MTT / Sit & Go / 重购机制）  
-🔥 在线扑克平台核心盈利模块  
+[简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [产品页面](https://niubideren111.github.io/Texas-Hold-em-Tournament-Source-Code/zh-cn/)
+
+以扑克赛事大厅和锦标赛产品为主题，提供比赛展示截图、游戏入口代码、Tars 协议及玩法流程资料。适合了解赛事类客户端界面与服务端模块的衔接。
+
+**德州锦标赛源码 · 德州赛事源码 · MTT源码 · SNG源码**
 
 🏆 完整赛事流程：报名 → 开赛 → 淘汰 → 决赛桌 → 奖励发放  
 
@@ -119,8 +117,11 @@ This project is a **Texas Hold'em Tournament System**, designed for building pro
 ## 📸 Tournament Preview | 比赛展示 | 比賽展示
 
 ![德州赛事项目列表页面](docs/assets/seo/texas-hold-em-tournament-source-code-01.jpg)
+
 ![德州锦标赛品牌赛事展示](docs/assets/seo/texas-hold-em-tournament-source-code-02.jpg)
+
 ![德州锦标赛相关列表与入口](docs/assets/seo/texas-hold-em-tournament-source-code-03.jpg)
+
 ![德州赛事产品首页展示](docs/assets/seo/texas-hold-em-tournament-source-code-04.jpg)
 
 ---
@@ -177,7 +178,6 @@ SNG 重点是单桌人数与开赛条件，MTT 还涉及多桌调度、淘汰和
 
 - Telegram：[fox_lovemyself](https://t.me/fox_lovemyself)
 - GitHub：[德州锦标赛源码](https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code)
-
 
 
 ## 许可
