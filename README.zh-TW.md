@@ -20,6 +20,28 @@ GameTcp.tars 提供協議進入點，create_game.cpp 提供遊戲實例建立程
 
 SNG 流程圖、資源圖設定及開發規范為團隊閱讀專案提供進入點。
 
+## 賽事玩法與技術架構
+
+SNG 通常在單桌達到開賽人數後開始；MTT 按賽程統一開賽，並增加多桌分配、淘汰、併桌、桌間平衡與決賽桌排名。儲存庫中的 SNG 時序圖可用於核對互動順序，完整報名、平衡桌與獎勵結算仍需在完整工程中驗證。
+
+```mermaid
+flowchart LR
+  A[賽事介面] --> B[GameTcp.tars]
+  B --> C[create_game.cpp]
+  C --> D[賽事與牌桌服務]
+  D --> E[啟動與發佈腳本]
+  F[GameGraph 與 SNG 時序圖] --> A
+  F --> D
+```
+
+| 技術層 | 公開檔案 | 用途 |
+|---|---|---|
+| 協議 | `GameTcp.tars` | 遊戲通訊定義 |
+| C++ 進入點 | `create_game.cpp` | 遊戲實例建立 |
+| 非同步回呼 | `AsyncLoginCallback.cpp`、`AsyncGetUserCallback.cpp` | 登入與使用者資料回呼 |
+| 設定與流程 | `GameGraph.json`、SNG 時序圖 | 資源與賽事流程參考 |
+| 建置發佈 | `makefile`、`copy.sh`、`publish.sh`、`script/` | 建置與維運進入點 |
+
 ## 資料閱讀與核對方式
 
 1. **先確認產品形態**：依序檢視截圖與圖說，確認產品類型和可見功能流程。

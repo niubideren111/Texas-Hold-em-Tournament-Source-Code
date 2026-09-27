@@ -1,4 +1,4 @@
-# 德州锦标赛源码｜赛事大厅（德州扑克）| Texas Hold'em Tournament System | Poker Tournament Source Code 
+# 德州锦标赛源码｜赛事大厅、Tars 协议与玩法流程
 
 > 中文简体 · 中文繁體 · English 多语言产品与源码资料
 
@@ -8,200 +8,105 @@
 
 **德州锦标赛源码 · 德州赛事源码 · MTT源码 · SNG源码**
 
-🏆 完整赛事流程：报名 → 开赛 → 淘汰 → 决赛桌 → 奖励发放  
+## 项目重点
 
-💰 专为提升玩家留存与平台收益而设计  
+### 赛事界面展示
 
-🔥 支持锦标赛 / 排名 / 奖池机制
-🔥 支援錦標賽 / 排名 / 獎池系統
+赛事列表、品牌赛事和俱乐部相关界面共同展示竞技产品的页面结构。
 
-🔥 Core module of real poker platforms (Tournament system)
-🔥 Used in real commercial poker environments
-🔥 可用于真实运营平台
+### 协议与游戏入口
 
-🏆 Build high-retention competitive poker tournaments
+GameTcp.tars 提供协议入口，create_game.cpp 提供游戏实例创建代码。
 
-💰 Increase platform revenue with tournament gameplay
-💰 提升平台盈利能力（锦标赛核心玩法）
-💰 提升平台盈利能力（錦標賽核心玩法）
+### 玩法时序与资源配置
 
----
+SNG 流程图、资源图配置及开发规范为团队阅读项目提供入口。
 
-## 🚀 Introduction | 项目介绍 | 專案介紹
+## 赛事玩法与产品流程
 
-This project is a **Texas Hold'em Tournament System**, designed for building professional poker tournament platforms.
+| 阶段 | SNG（坐满即开） | MTT（定时多桌） |
+|---|---|---|
+| 报名 | 达到设定人数后进入开赛条件 | 在报名时间内加入赛事 |
+| 开赛 | 单桌座位与初始筹码 | 多桌分配、统一盲注级别 |
+| 进行 | 盲注推进、淘汰至最终名次 | 盲注推进、淘汰、合桌与桌间平衡 |
+| 结束 | 输出单桌排名与奖励结果 | 输出决赛桌排名与赛事结果 |
 
-本项目是一套**德州扑克锦标赛系统源码**，适用于搭建专业赛事玩法。
+> 上表说明锦标赛产品的一般流程；本仓库公开证据包括赛事界面、SNG 时序图、C++ 入口、Tars 协议和脚本。完整报名、桌间平衡、奖励结算仍需在完整工程中验收。
 
-本專案為**德州撲克錦標賽系統源碼**，可用於搭建專業競技玩法。
+## 技术组成
 
-👉 Core feature of any real poker platform
-👉 扑克平台核心功能模块
-👉 撲克平台核心功能模組
+```mermaid
+flowchart LR
+  A[赛事界面与入口] --> B[GameTcp.tars 通信协议]
+  B --> C[create_game.cpp 游戏实例入口]
+  C --> D[赛事状态与牌桌服务]
+  D --> E[启动、复制与发布脚本]
+  F[SNG 时序图与 GameGraph.json] --> A
+  F --> D
+```
 
----
+| 层次 | 仓库证据 | 用途 |
+|---|---|---|
+| 接口协议 | `GameTcp.tars` | 定位客户端与游戏服务间的通信定义 |
+| 游戏入口 | `create_game.cpp` | 定位游戏实例创建逻辑 |
+| 回调逻辑 | `AsyncLoginCallback.cpp`、`AsyncGetUserCallback.cpp` | 理解异步登录与用户数据回调 |
+| 资源与流程 | `GameGraph.json`、SNG 时序图 | 对照资源配置和赛事交互流程 |
+| 运维脚本 | `script/`、`copy.sh`、`publish.sh`、`makefile` | 核对构建、复制、启动与发布入口 |
 
-## 🏆 Tournament Features | 锦标赛功能 | 錦標賽功能
+## 资料阅读与核对方式
 
-* ⏱ Blind level system（盲注增长）
-* 🪙 Prize pool distribution（奖池分配）
-* 🧍 Player elimination system（淘汰机制）
-* 📊 Leaderboard ranking（排行榜系统）
-* 🎯 Sit & Go / MTT modes（多种赛事模式）
+1. **先确认产品形态**：依次查看截图和图注，确认产品类型与可见功能流程。
+2. **再核对文件证据**：直接打开下方列出的源码或文档，不只依赖功能描述。
+3. **检查可构建范围**：确认准备运行的部分是否具备依赖、资源、配置和启动脚本。
+4. **确认授权**：阅读仓库许可；商业素材及完整工程交付应另行取得书面授权。
 
+## 产品截图
 
----
+| 赛事列表 | 品牌赛事 |
+|---|---|
+| ![德州赛事项目列表页面](docs/assets/seo/texas-hold-em-tournament-source-code-01.jpg) | ![德州锦标赛品牌赛事展示](docs/assets/seo/texas-hold-em-tournament-source-code-02.jpg) |
+| **赛事入口** | **产品首页** |
+| ![德州锦标赛相关列表与入口](docs/assets/seo/texas-hold-em-tournament-source-code-03.jpg) | ![德州赛事产品首页展示](docs/assets/seo/texas-hold-em-tournament-source-code-04.jpg) |
 
-## 🎮 Competitive Experience | 竞技体验 | 競技體驗
+## 公开源码与资料
 
-* 🏆 Real-time ranking updates（实时排名）
-* 🔥 High-stakes tournament gameplay（高竞技对局）
-* 💥 Final table showdown（决赛桌玩法）
+| 文件 | 说明 |
+|---|---|
+| [GameTcp.tars](GameTcp.tars) | 游戏通信协议定义 |
+| [create_game.cpp](create_game.cpp) | 游戏实例创建入口 |
+| [GameGraph.json](GameGraph.json) | 资源图配置 |
+| [Doc/游戏玩法/GamePlay(SNG)-时序图.png](Doc/%E6%B8%B8%E6%88%8F%E7%8E%A9%E6%B3%95/GamePlay(SNG)-%E6%97%B6%E5%BA%8F%E5%9B%BE.png) | SNG 玩法时序图 |
+| [script/start.sh](script/start.sh) | 服务启动脚本资料 |
 
-👉 Designed for competitive poker platforms
-👉 专为竞技平台设计
-👉 專為競技平台設計
+## 开始阅读
 
----
-
-## 💰 Monetization Model | 盈利模式 | 盈利模式
-
-* ✔ Tournament entry fees（报名费）
-* ✔ Platform rake（抽水）
-* ✔ Prize pool control（奖池管理）
-
-👉 Core revenue driver for poker platforms
-👉 平台核心盈利来源
-👉 平台核心盈利來源
-
----
-
-## 📦 Tech Stack | 技术架构 | 技術架構
-
-* C++ (Game Logic)
-* Node.js (Server)
-* WebSocket
-* MySQL / Redis
-
----
-
-## 🎯 What You Get | 你将获得 | 您將獲得
-
-* Full source code ｜ 完整源码 ｜ 完整源碼
-* Tournament system ｜ 锦标赛模块 ｜ 錦標賽模組
-* Backend + Client ｜ 前后端 ｜ 前後端
-* Admin panel ｜ 后台系统 ｜ 後台系統
-* Database ｜ 数据库 ｜ 資料庫
-* Deployment guide ｜ 部署文档 ｜ 部署文件
-
-🔥 Save 6–12 months development time
-
----
-
-## 🚀 Why Choose This Project | 为什么选择 | 為什麼選擇
-
-* ✔ Production-ready (NOT demo)
-* ✔ Designed for real poker platforms
-* ✔ Stable and scalable
-* ✔ Easy to customize
-
-👉 Faster than building from scratch
-
-## 📞 Contact | 联系方式 | 聯絡方式
-
-* Telegram: @fox_lovemyself
-* Email:zyue02561@gmail.com
-
-💬 Fast response within 24h
-
-## 📸 Tournament Preview | 比赛展示 | 比賽展示
-
-![德州赛事项目列表页面](docs/assets/seo/texas-hold-em-tournament-source-code-01.jpg)
-
-![德州锦标赛品牌赛事展示](docs/assets/seo/texas-hold-em-tournament-source-code-02.jpg)
-
-![德州锦标赛相关列表与入口](docs/assets/seo/texas-hold-em-tournament-source-code-03.jpg)
-
-![德州赛事产品首页展示](docs/assets/seo/texas-hold-em-tournament-source-code-04.jpg)
-
----
-## 🔄 Tournament Flow | 比赛流程 | 比賽流程
-
-1. 📝 Player registration（报名）  
-2. 🎮 Tournament start（开赛）  
-3. ⏱ Blind level increase（盲注增长）  
-4. ❌ Player elimination（淘汰）  
-5. 🏆 Final table（决赛桌）  
-6. 💰 Prize distribution（奖励发放）  
-
-👉 Complete tournament lifecycle simulation  
-👉 完整赛事流程模拟  
-👉 完整賽事流程模擬  
-
-
-## ⚙️ Advanced Tournament Features | 高级玩法 | 高級玩法
-
-- 🔁 Rebuy / Add-on（重购机制）  
-- ⏳ Late registration（延迟报名）  
-- 🎯 Dynamic blind structure（动态盲注）  
-- 🏆 Final table optimization（决赛桌优化）  
-
-👉 Matches real-world poker tournaments  
-👉 接近真实赛事机制  
-👉 接近真實賽事機制  
-## 🔥 Player Engagement | 玩家体验 | 玩家體驗
-
-- 📈 Competitive ranking pressure（排名竞争）  
-- 💥 High-stakes gameplay（高风险对局）  
-- 🎯 Tournament progression excitement（晋级刺激）  
-
-👉 Designed for high retention gameplay  
-👉 专为高留存设计  
-👉 專為高留存設計  
+```bash
+git clone https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code.git
+cd Texas-Hold-em-Tournament-Source-Code
+```
 
 ## 常见问题
 
 ### SNG 与 MTT 关注点有什么不同？
+
 SNG 重点是单桌人数与开赛条件，MTT 还涉及多桌调度、淘汰和合桌；本仓库提供赛事产品与流程资料。
 
 ### 哪个文件用于理解服务端入口？
+
 先阅读 create_game.cpp 与 GameTcp.tars，再对照玩法时序图和服务脚本。
 
- README 将**产品展示、公开源码和项目交付**分开描述。公开仓库中没有出现的客户端、服务器、数据库、后台、支付或部署能力，不在此处作出已实现承诺；需要验收时，应以具体文件、版本和运行记录为准。
+## 后续资料完善方向
+
+分别上传 SNG 和 MTT 的状态说明、盲注表样例、排名协议与结算测试记录，避免只用截图替代接口文档。 后续更新还应加入版本化依赖清单、经过验证的构建或导入步骤、简明架构/产品流程图，以及能对应真实文件变化的版本记录。大型授权资源可放入 GitHub Releases 并提供校验值，不能提交密钥、生产地址或用户数据。
 
 ## 相关项目
 
 - [dezhou-poker-club-source-code](https://github.com/niubideren111/dezhou-poker-club-source-code)
 - [Texas-Holdem-Game-Source-Code](https://github.com/niubideren111/Texas-Holdem-Game-Source-Code)
 
-## 项目咨询
+## 资料范围与许可
 
-- Telegram：[fox_lovemyself](https://t.me/fox_lovemyself)
-- GitHub：[德州锦标赛源码](https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code)
+公开仓库包含 C++ 片段、协议和配置资料、流程图与比赛截图；完整报名、开赛、淘汰及结算链路需在完整工程中验收。 公开内容以实际文件、依赖和许可为准，不承诺搜索排名、直接上线或固定性能结果。
 
-
-## 许可
-
-请按仓库现有 [LICENSE](LICENSE) 与 [License.md](License.md) 使用公开文件。商业工程、美术资源和完整部署资料的授权范围以书面约定为准。
-
-
-## ⚠️ Disclaimer | 声明 | 聲明
-
-For educational purposes only.
-请遵守当地法律法规。
-
----
-
-## 🔍 SEO Keywords
-
-poker tournament system
-texas holdem tournament
-MTT poker system
-sit and go poker
-online poker tournament
-poker competition system
-德州锦标赛源码
-德州比赛系统
-扑克赛事系统
-
-
+- Telegram: [@fox_lovemyself](https://t.me/fox_lovemyself)
+- GitHub: [Texas-Hold-em-Tournament-Source-Code](https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code)

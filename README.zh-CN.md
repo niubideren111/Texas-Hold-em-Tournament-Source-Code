@@ -1,4 +1,4 @@
-# 德州锦标赛源码（德州赛事）｜赛事大厅、Tars 协议与玩法流程
+# 德州锦标赛源码｜赛事大厅、Tars 协议与玩法流程
 
 [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [English](README.en.md) · [产品页面](https://niubideren111.github.io/Texas-Hold-em-Tournament-Source-Code/zh-cn/)
 
@@ -19,6 +19,28 @@ GameTcp.tars 提供协议入口，create_game.cpp 提供游戏实例创建代码
 ### 玩法时序与资源配置
 
 SNG 流程图、资源图配置及开发规范为团队阅读项目提供入口。
+
+## 赛事玩法与技术架构
+
+SNG 通常在单桌达到开赛人数后开始；MTT 按赛程统一开赛，并增加多桌分配、淘汰、合桌、桌间平衡和决赛桌排名。仓库中的 SNG 时序图可用于核对交互顺序，完整报名、平衡桌和奖励结算仍需在完整工程中验证。
+
+```mermaid
+flowchart LR
+  A[赛事界面] --> B[GameTcp.tars]
+  B --> C[create_game.cpp]
+  C --> D[赛事与牌桌服务]
+  D --> E[启动和发布脚本]
+  F[GameGraph 与 SNG 时序图] --> A
+  F --> D
+```
+
+| 技术层 | 公开文件 | 用途 |
+|---|---|---|
+| 协议 | `GameTcp.tars` | 游戏通信定义 |
+| C++ 入口 | `create_game.cpp` | 游戏实例创建 |
+| 异步回调 | `AsyncLoginCallback.cpp`、`AsyncGetUserCallback.cpp` | 登录与用户数据回调 |
+| 配置与流程 | `GameGraph.json`、SNG 时序图 | 资源和赛事流程参考 |
+| 构建发布 | `makefile`、`copy.sh`、`publish.sh`、`script/` | 构建与运维入口 |
 
 ## 资料阅读与核对方式
 
@@ -75,7 +97,7 @@ SNG 重点是单桌人数与开赛条件，MTT 还涉及多桌调度、淘汰和
 
 ## 资料范围与许可
 
-公开仓库包含 C++ 源码、协议和配置资料、流程图与比赛截图；完整报名、开赛、淘汰及结算链路需在完整工程中验收。 公开内容以实际文件、依赖和许可为准，不承诺搜索排名、直接上线或固定性能结果。
+公开仓库包含 C++ 片段、协议和配置资料、流程图与比赛截图；完整报名、开赛、淘汰及结算链路需在完整工程中验收。 公开内容以实际文件、依赖和许可为准，不承诺搜索排名、直接上线或固定性能结果。
 
 - Telegram: [@fox_lovemyself](https://t.me/fox_lovemyself)
 - GitHub: [Texas-Hold-em-Tournament-Source-Code](https://github.com/niubideren111/Texas-Hold-em-Tournament-Source-Code)

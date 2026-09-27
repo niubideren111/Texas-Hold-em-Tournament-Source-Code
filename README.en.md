@@ -20,6 +20,28 @@ Use GameTcp.tars and create_game.cpp to identify communication and instance-crea
 
 Read the SNG sequence diagram and GameGraph configuration alongside the code.
 
+## Tournament flow and architecture
+
+SNG normally starts when a single table reaches its configured player count. MTT follows a scheduled start and adds multi-table seating, elimination, table balancing, consolidation and final-table ranking. The public SNG sequence diagram documents part of that interaction; registration, balancing and settlement still require validation in the complete project.
+
+```mermaid
+flowchart LR
+  A[Tournament UI] --> B[GameTcp.tars protocol]
+  B --> C[create_game.cpp entry]
+  C --> D[Tournament and table services]
+  D --> E[Start and publish scripts]
+  F[GameGraph and SNG sequence] --> A
+  F --> D
+```
+
+| Layer | Public evidence | Purpose |
+|---|---|---|
+| Protocol | `GameTcp.tars` | Game communication definitions |
+| C++ entry | `create_game.cpp` | Game instance creation |
+| Async callbacks | `AsyncLoginCallback.cpp`, `AsyncGetUserCallback.cpp` | Login and user-data callbacks |
+| Configuration | `GameGraph.json`, SNG diagram | Resource and tournament-flow reference |
+| Operations | `makefile`, `copy.sh`, `publish.sh`, `script/` | Build and deployment entry points |
+
 ## How to evaluate the material
 
 1. **Confirm the product:** review the screenshots and captions to identify the product type and visible workflow.
